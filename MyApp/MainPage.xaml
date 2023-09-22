@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="MyApp.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <CollectionView
+                x:Name="colview"
+                HeightRequest="800"
+                WidthRequest="400">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                         <toolkit:MediaElement
+                            ShouldAutoPlay="True"
+                            HeightRequest="200"
+                            WidthRequest="200"
+                            Source="{Binding .}"/>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <!--<toolkit:MediaElement
+                        x:Name="mediaElement"
+                        ShouldAutoPlay="True"
+                        HeightRequest="200"
+                        WidthRequest="200"
+                        Source="https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" 
+                        MediaEnded="OnMediaEnded"
+                        MediaFailed="OnMediaFailed"
+                        MediaOpened="OnMediaOpened"
+                        PositionChanged="OnPositionChanged"
+                        StateChanged="OnStateChanged"
+                        SeekCompleted="OnSeekCompleted"/>-->
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
